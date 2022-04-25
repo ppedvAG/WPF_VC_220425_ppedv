@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Neue Person" 
         SizeToContent="Height"
-        Width="285" 
+        Width="280" 
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         Topmost="True"
