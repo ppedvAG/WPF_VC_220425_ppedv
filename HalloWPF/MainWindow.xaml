@@ -35,7 +35,7 @@
                 <!--Button.Background entspricht hier der Background-Property-Variablen des Buttons ->
                 LinearGradiantBrush ist der Aufruf des Konstruktors der LinearGradientBrush-Klasse und weist
                 das neue Objekt der Property zu-->
-                <LinearGradientBrush>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
                     <GradientStop Color="LightBlue" Offset="0"/>
                     <GradientStop Color="DarkBlue" Offset="1"/>
                 </LinearGradientBrush>
