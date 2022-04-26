@@ -11,14 +11,7 @@
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         Topmost="True"
-        FontSize="14.0">
-
-    <Window.Background>
-        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-            <GradientStop Color="LightYellow" Offset="0"/>
-            <GradientStop Color="Orange" Offset="1"/>
-        </LinearGradientBrush>
-    </Window.Background>
+        Style="{StaticResource Sty_Wnd}">
 
     <Window.DataContext>
         <local:Person/>
