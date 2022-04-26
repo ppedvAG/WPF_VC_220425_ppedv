@@ -62,7 +62,7 @@
                  Text="{Binding ElementName=Sdr_Alpha, Path=Value, UpdateSourceTrigger=PropertyChanged}"/>
 
 
-        <TextBlock Text="{Binding ElementName=Rct_Output_2, Path=Fill, StringFormat=Picked color: {0}, UpdateSourceTrigger=PropertyChanged}"
+        <TextBlock Text="{Binding ElementName=Rct_Output_2, Path=Fill, StringFormat='Picked color: {0}', UpdateSourceTrigger=PropertyChanged}"
                    HorizontalAlignment="Center" 
                    Margin="5"
                    Grid.Row="4" Grid.ColumnSpan="3"/>
