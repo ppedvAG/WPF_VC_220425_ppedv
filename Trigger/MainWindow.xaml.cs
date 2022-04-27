@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using UserControls;
 
 namespace Trigger
 {
@@ -47,6 +48,18 @@ namespace Trigger
         private void Btn_Ändern_Click(object sender, RoutedEventArgs e)
         {
             BoolVal = !BoolVal;
+        }
+
+        //EventHandler des UserControls (vgl. M11_UserControls)
+        private void ColorPicker_Tap(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show((sender as ColorPicker).PickedColor.ToString());
+        }
+
+        private void ColorPicker_PickedColorChanged(object sender, RoutedEventArgs e)
+        {
+            if ((sender as ColorPicker).PickedColor.ToString().Equals("#FF000000"))
+                MessageBox.Show("Alles ist schwarz");
         }
     }
 }
