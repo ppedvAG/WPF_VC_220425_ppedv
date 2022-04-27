@@ -6,7 +6,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Templates"
         mc:Ignorable="d"
-        Title="MainWindow" Height="467" Width="544.972" WindowStartupLocation="CenterScreen">
+        Title="MainWindow" Height="396" Width="427" WindowStartupLocation="CenterScreen"
+        Topmost="True">
+
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Template">
@@ -43,6 +45,16 @@
             <Setter Property="Background" Value="LightGreen"/>
 
         </Style>
+
+        <DataTemplate DataType="{x:Type local:Person}">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Vorname}" Margin="0,0,5,0"/>
+                <TextBlock Text="{Binding Nachname}" Margin="0,0,5,0"/>
+                <TextBlock Text="{Binding Alter, StringFormat=({0})}"/>
+                <Button Content="Löschen" Click="Button_Click" Tag="{Binding}"/>
+            </StackPanel>
+        </DataTemplate>
+        
     </Window.Resources>
 
     <StackPanel>
@@ -50,6 +62,27 @@
         <Button Content="Klick mich!!" Height="100" Width="100" 
                 x:Name="Btn_ControlTemplate" Click="Btn_ControlTemplate_Click"
                 Background="Aqua"/>
+
+        <ListBox x:Name="Lbx_Personen" Height="100"
+                 ItemsSource="{Binding Personenliste}"
+                 SelectedValuePath="Vorname">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Vorname}" Margin="0,0,5,0"/>
+                        <TextBlock Text="{Binding Nachname}" Margin="0,0,5,0"/>
+                        <TextBlock Text="{Binding Alter, StringFormat=({0})}"/>
+                        <Button Content="Löschen" Click="Button_Click" Tag="{Binding}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <TextBlock Text="{Binding ElementName=Lbx_Personen, Path=SelectedIndex}"/>
+        
+        <Label Content="{Binding ElementName=Lbx_Personen, Path=SelectedItem}"/>
+
+        <TextBlock Text="{Binding ElementName=Lbx_Personen, Path=SelectedValue}"/>
     </StackPanel>
 
 </Window>
