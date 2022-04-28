@@ -44,7 +44,7 @@ namespace MVVM.ViewModel
                     p =>
                     {
                         //Öffnen des nächsten Views und Zuweisung des ViewModels erfolgt in Lab_14
-
+                        new View.ListView().Show();
                         //Schließen dieses Fensters (welches über den CommandParameter übergeben wurde)
                         (p as Window).Close();
                     },
